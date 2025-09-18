@@ -15,6 +15,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- See https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#installation
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "master",
+    lazy = false,
+    build = ":TSUpdate",
+  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
